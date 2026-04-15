@@ -1,0 +1,18 @@
+Requirements:
+-Python 3.10+
+-polib library
+
+Install dependency:
+pip install polib
+pip install pyinstaller (optional)
+
+Packaging:
+pyinstaller --onefile --name PrestoPOTranslator app.py
+
+// --- How to Use --- //
+1. Place CSV files inside TranslationData/
+2. Run PrestoPOTranslator.exe
+3. Select target language (Polish, French, etc.)
+4. Click button
+5. The Game.po file will be updated automatically
+6. The Game.po file is ready to copy 
