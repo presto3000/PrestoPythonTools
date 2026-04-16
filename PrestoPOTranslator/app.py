@@ -49,10 +49,13 @@ def translate(language_column):
                 key = entry.msgctxt.split(",")[-1]
 
                 if key in translations:
-                    if entry.msgstr != translations[key]:
-                        entry.msgstr = translations[key]
+                    clean_value = " ".join(translations[key].split())
+
+                    if entry.msgstr != clean_value:
+                        entry.msgstr = clean_value
                         updated += 1
 
+        po.wrapwidth = 0
         po.save(PO_FILE)
 
         messagebox.showinfo("Done", f"Updated {updated} entries!")
